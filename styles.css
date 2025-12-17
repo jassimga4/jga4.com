@@ -21,7 +21,6 @@ body{
 	overflow-x: hidden;
     background-color: var(--bg-light);
     color: var(--dark);
-    padding-bottom: 5rem; /* Add padding to prevent footer overlap */
 }
 
 
@@ -55,14 +54,12 @@ nav a:hover, nav a.active {
 
 
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
     text-align: center;
     padding: 1rem;
     background-color: var(--bg-light);
     font-size: 0.8rem;
+    margin-top: auto;
 }
 
 
@@ -75,7 +72,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 5rem); /* Adjust based on footer height */
+    min-height: calc(100vh - 3rem); /* Adjust based on footer height */
     text-align: center;
 }
 
