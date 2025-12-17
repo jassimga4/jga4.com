@@ -195,24 +195,16 @@ footer {
     align-items: center;
     width: 48px; /* Square container for the icon */
     height: 48px;
-    border: 1px solid var(--dark);
-    border-radius: 50%; /* Make it circular */
-    transition: background-color 0.3s, color 0.3s;
+    transition: transform 0.3s;
 }
 
 .social-links li a:hover {
-    background-color: var(--dark);
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 .social-links li a img {
     width: 28px; /* Size of the SVG icon */
     height: 28px;
-    filter: invert(0%); /* Default to black icon */
-    transition: filter 0.3s;
-}
-
-.social-links li a:hover img {
-    filter: invert(100%); /* Invert to white on hover */
 }
 
 /* Specific styles for Resume page */
