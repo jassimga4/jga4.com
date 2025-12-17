@@ -43,6 +43,9 @@ nav a {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     transition: color 0.3s;
+    min-width: 120px; /* Set a consistent minimum width */
+    text-align: center; /* Center the text within the oval */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
 nav a:hover, nav a.active {
