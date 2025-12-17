@@ -235,3 +235,11 @@ footer {
     }
 }
 
+.about-me-image-oval {
+    float: right;
+    width: 200px;
+    height: 250px; /* To make it oval */
+    margin-left: 20px;
+    margin-bottom: 20px;
+    clip-path: url(oval-clip.svg#oval-shape);
+}
