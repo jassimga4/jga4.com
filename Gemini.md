@@ -31,6 +31,7 @@ The Gemini model will act as a full-stack developer to assist in the creation of
 ### 1. High-Level Goals
 *   **Primary Purpose:** To serve as a professional landing page for networking and career opportunities.
 *   **Secondary Purpose:** To host a few blog articles.
+*   **Domain:** The website will be hosted at jga4.com.
 *   **Target Audience:** Recruiters and industry peers.
 *   **Professional Focus:** Digitizing and automating industrial work, AI-powered workflows, and smart contracts/blockchain technology.
 
