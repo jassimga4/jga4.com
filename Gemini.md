@@ -22,6 +22,8 @@ The Gemini model will act as a full-stack developer to assist in the creation of
 
 4.  **Review and Iteration:** The client can review the progress and provide feedback. The Gemini developer will iterate on the design and functionality based on the client's input.
 
+5.  **Continuous Integration:** Before each `git commit`, the Gemini developer will check if any `.md` files in the `content` directory have been updated. If they have, the Gemini developer will update the `case-study.html` page to reflect the changes in the markdown files.
+
 ---
 
 ## Website Requirements
@@ -35,7 +37,7 @@ The Gemini model will act as a full-stack developer to assist in the creation of
 ### 2. Desired Sections/Pages
 *   **Home:** Introduction and highlights.
 *   **About Me:** Detailed background, experience, and interests.
-*   **Case Studies:** Showcase projects with problem, solution, technologies, and outcomes.
+*   **Case Study:** Showcase projects with problem, solution, technologies, and outcomes.
 *   **Blog:** For articles and insights.
 *   **Contact:** Information for connecting with recruiters and peers.
 *   **Resume/CV:** Web-friendly resume display with PDF download option.
