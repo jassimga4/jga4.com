@@ -16,3 +16,5 @@ The website includes the following main sections:
 *   **Contact:** Information for connecting with recruiters and peers.
 
 The design is minimalist, utilizing a black and white color scheme with HTML and CSS only, ensuring responsiveness for mobile devices.
+
+Update again.
