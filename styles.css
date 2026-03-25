@@ -94,6 +94,13 @@ footer {
     margin-top: 0.5rem; /* Space between logo and name */
 }
 
+.hero-tagline {
+    margin: 0 1rem 1.75rem;
+    max-width: 720px;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
 /* Standard Page Layout */
 .page-layout {
     display: flex;

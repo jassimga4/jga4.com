@@ -2,9 +2,13 @@
 
 This repository hosts the personal website of Jassim Abdul Gafoor, designed as a professional landing page for networking and career opportunities, with a secondary purpose of hosting blog articles.
 
+**Engineering professional + Industrial Engineering student at the intersection of industry operations, automation/AI—documented through case studies and writing.**
+
+Live site: https://jassimgafoor.github.io/
+
 ## Overview
 
-The website focuses on professional areas such as digitizing and automating industrial work, AI-powered workflows, and smart contracts/blockchain technology. It is primarily targeted at recruiters and industry peers.
+The website focuses on professional areas such as digitizing and automating industrial work, AI-powered workflows, and workflow automation. It is primarily targeted at recruiters and industry peers.
 
 ## Key Sections
 

@@ -33,7 +33,7 @@ The Gemini model will act as a full-stack developer to assist in the creation of
 *   **Secondary Purpose:** To host a few blog articles.
 *   **Domain:** The website will be hosted at jga4.com.
 *   **Target Audience:** Recruiters and industry peers.
-*   **Professional Focus:** Digitizing and automating industrial work, AI-powered workflows, and smart contracts/blockchain technology.
+*   **Professional Focus:** Digitizing and automating industrial work, AI-powered workflows, and workflow automation for industrial environments.
 
 ### 2. Desired Sections/Pages
 *   **Home:** Introduction and highlights.
