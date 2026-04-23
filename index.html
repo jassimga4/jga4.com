@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>JGA4 Consultancy — Practical AI for Manufacturing & PMO</title>
+  <meta
+    name="description"
+    content="JGA4 Consultancy helps manufacturing leaders and PMO directors implement practical AI tools that boost efficiency and prove ROI—fast."
+  />
+  <link rel="canonical" href="https://jga4.com/" />
+
+  <meta property="og:title" content="JGA4 Consultancy" />
+  <meta property="og:description" content="Practical AI implementation for manufacturing and PMO teams—focused on efficiency and ROI." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jga4.com/" />
+  <meta property="og:site_name" content="JGA4 Consultancy" />
+  <meta property="og:image" content="https://jga4.com/logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JGA4 Consultancy" />
+  <meta name="twitter:description" content="Practical AI implementation for manufacturing and PMO teams—focused on efficiency and ROI." />
+
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <script defer data-domain="jga4.com" src="https://plausible.io/js/script.js"></script>
+
+  <style>
+    :root {
+      /* Solarized Light */
+      --bg: #fdf6e3;      /* base3 */
+      --surface: #eee8d5; /* base2 */
+      --border: #e2dcc9;  /* between base2/base3 */
+      --text: #657b83;    /* base00 */
+      --text-strong: #586e75; /* base01 */
+      --muted: #839496;   /* base0 */
+      --cta: #268bd2;     /* blue */
+      --cta-2: #2aa198;   /* cyan */
+      --ok: #859900;      /* green */
+      --warn: #cb4b16;    /* orange */
+
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.06);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      padding: 10px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      z-index: 10;
+    }
+    .skip-link:focus { left: 12px; }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(253, 246, 227, 0.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 220px;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      filter: grayscale(1) brightness(0.35);
+      opacity: 0.95;
+    }
+    .brand-name {
+      font-weight: 720;
+      letter-spacing: 0.2px;
+      color: var(--text-strong);
+      font-size: 0.98rem;
+      line-height: 1.1;
+    }
+    .brand-sub { display: none; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav a {
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      color: var(--text-strong);
+      font-weight: 560;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+    .nav a:hover {
+      border-color: var(--border);
+      background: rgba(238, 232, 213, 0.6);
+      text-decoration: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      text-decoration: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      border-color: rgba(38, 139, 210, 0.32);
+      background: linear-gradient(180deg, rgba(38, 139, 210, 0.14), rgba(38, 139, 210, 0.08));
+      color: var(--text-strong);
+    }
+    .btn-primary:hover { text-decoration: none; border-color: rgba(38, 139, 210, 0.55); }
+
+    .btn-secondary {
+      border-color: rgba(42, 161, 152, 0.32);
+      background: linear-gradient(180deg, rgba(42, 161, 152, 0.14), rgba(42, 161, 152, 0.08));
+      color: var(--text-strong);
+    }
+    .btn-secondary:hover { text-decoration: none; border-color: rgba(42, 161, 152, 0.55); }
+
+    /* Sections */
+    section {
+      padding: 64px 0;
+    }
+    .section-title {
+      margin: 0 0 10px;
+      font-size: clamp(1.4rem, 2vw, 2rem);
+      color: var(--text-strong);
+      letter-spacing: -0.2px;
+    }
+    .section-lede {
+      margin: 0 0 26px;
+      color: var(--muted);
+      max-width: 72ch;
+      font-size: 1.03rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 58px 0 34px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 26px;
+      align-items: start;
+    }
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      background: rgba(238, 232, 213, 0.6);
+      border-radius: 999px;
+      color: var(--text-strong);
+      font-weight: 650;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      line-height: 1.07;
+      color: var(--text-strong);
+      letter-spacing: -0.8px;
+    }
+    .hero p {
+      margin: 0 0 18px;
+      max-width: 70ch;
+      font-size: 1.08rem;
+      color: var(--text);
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 16px;
+    }
+    .cred-row {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .pill {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(238, 232, 213, 0.45);
+      color: var(--text-strong);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+    .pill span { color: var(--muted); font-weight: 560; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .roi-card {
+      padding: 18px;
+    }
+    .roi-title {
+      margin: 0 0 8px;
+      color: var(--text-strong);
+      font-weight: 740;
+      font-size: 1.05rem;
+    }
+    .roi-sub {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+    .roi-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .roi-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(226, 220, 201, 0.9);
+      background: rgba(253, 246, 227, 0.55);
+    }
+    .roi-row strong { color: var(--text-strong); }
+    .roi-row small { color: var(--muted); font-weight: 650; }
+    .roi-tag {
+      font-weight: 820;
+      color: var(--ok);
+      letter-spacing: 0.2px;
+    }
+    .roi-note {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* Services */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .service {
+      padding: 18px;
+    }
+    .service h3 {
+      margin: 0 0 10px;
+      color: var(--text-strong);
+      font-size: 1.15rem;
+      letter-spacing: -0.2px;
+    }
+    .service p { margin: 0 0 12px; }
+    .service ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+    .service li {
+      padding-left: 14px;
+      position: relative;
+      color: var(--text);
+    }
+    .service li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cta-2);
+    }
+
+    /* Process */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .step {
+      padding: 16px;
+    }
+    .step .num {
+      width: 32px;
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(253, 246, 227, 0.7);
+      color: var(--text-strong);
+      font-weight: 850;
+      margin-bottom: 10px;
+    }
+    .step h3 {
+      margin: 0 0 8px;
+      color: var(--text-strong);
+      font-size: 1.05rem;
+    }
+    .step p {
+      margin: 0 0 10px;
+      color: var(--text);
+    }
+    .deliverables {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 6px;
+    }
+    .deliverables li {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.93rem;
+    }
+
+    /* Trust */
+    .results-bullets {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      width: 100%;
+    }
+    .results-bullets li {
+      position: relative;
+      padding: 14px 14px 14px 34px;
+      border: 1px solid rgba(226, 220, 201, 0.9);
+      border-radius: 12px;
+      background: rgba(253, 246, 227, 0.55);
+      color: var(--text);
+    }
+    .results-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 14px;
+      top: 1.1em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cta-2);
+    }
+    .results-bullets strong { color: var(--text-strong); }
+
+    /* Lead capture */
+    .lead {
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .lead h3 {
+      margin: 0 0 8px;
+      color: var(--text-strong);
+      font-size: 1.25rem;
+    }
+    .lead p { margin: 0; color: var(--muted); }
+
+    form {
+      display: grid;
+      gap: 10px;
+    }
+    label {
+      display: grid;
+      gap: 6px;
+      font-weight: 700;
+      color: var(--text-strong);
+      font-size: 0.92rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(226, 220, 201, 1);
+      background: rgba(253, 246, 227, 0.65);
+      color: var(--text-strong);
+      font: inherit;
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: rgba(38, 139, 210, 0.55);
+      box-shadow: 0 0 0 4px rgba(38, 139, 210, 0.12);
+    }
+    textarea { min-height: 92px; resize: vertical; }
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 6px;
+    }
+    .fineprint {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 26px 0 40px;
+      border-top: 1px solid var(--border);
+      background: rgba(238, 232, 213, 0.25);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .footer h4 {
+      margin: 0 0 10px;
+      color: var(--text-strong);
+      font-size: 1rem;
+    }
+    .footer a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 0;
+      color: var(--text);
+    }
+    .social-icon {
+      width: 18px;
+      height: 18px;
+      opacity: 0.9;
+    }
+    .copyright {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .cred-row { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .results { grid-template-columns: 1fr; }
+      .lead { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .nav { justify-content: flex-start; }
+      .brand { min-width: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="JGA4 Consultancy">
+          <img class="brand-mark" src="logo.png" alt="JGA4 Consultancy logo" />
+          <span class="brand-name">
+            JGA4 Consultancy
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#results">Results</a>
+          <a class="btn btn-primary" href="#contact">Book a Free AI Audit</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="kicker">For founders + PMO directors in manufacturing</div>
+            <h1>Stop discussing AI in meetings. Start using it in the workflow.</h1>
+            <p>
+              If you’re worried your competitors are moving faster—but you don’t know where to start—JGA4 Consultancy
+              helps you implement practical AI tools that cut admin load, improve delivery reliability, and
+              <strong>prove ROI in weeks</strong>.
+            </p>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#contact">Book a Free AI Audit</a>
+              <a class="btn btn-secondary" href="#process">See the step-by-step</a>
+            </div>
+
+            <div class="cred-row" aria-label="Quick credibility points">
+              <div class="pill"><strong>ROI-first</strong> <span>prioritized use-cases</span></div>
+              <div class="pill"><strong>Low disruption</strong> <span>fits current tools</span></div>
+              <div class="pill"><strong>Adoption included</strong> <span>training + playbooks</span></div>
+            </div>
+          </div>
+
+          <aside class="card roi-card" aria-label="Example ROI dashboard">
+            <p class="roi-title">Example ROI snapshot</p>
+            <p class="roi-sub">What “practical AI” looks like in week 1–6.</p>
+            <div class="roi-grid">
+              <div class="roi-row">
+                <strong>Weekly reporting</strong>
+                <small>6 hrs → 1.5 hrs</small>
+              </div>
+              <div class="roi-row">
+                <strong>RFI / email triage</strong>
+                <small>2 days → same-day</small>
+              </div>
+              <div class="roi-row">
+                <strong>Meeting notes → actions</strong>
+                <small>Manual → automated</small>
+              </div>
+              <div class="roi-row">
+                <strong>Outcome</strong>
+                <small class="roi-tag">Savings you can measure</small>
+              </div>
+            </div>
+            <p class="roi-note">
+              We start with workflows that are already happening (M365, Teams, Jira/Asana/Monday, docs, spreadsheets),
+              then integrate responsibly—so results show up fast.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">AI you can operationalize. Not another slide deck.</h2>
+        <p class="section-lede">
+          We translate AI into outcomes you care about: fewer manual handoffs, faster project visibility, cleaner data,
+          and repeatable processes your team will actually adopt.
+        </p>
+
+        <div class="grid-3">
+          <article class="card service">
+            <h3>AI Native Strategy</h3>
+            <p>
+              A practical plan that maps AI to the work that drives margin, throughput, and delivery reliability.
+              You’ll leave with a prioritized roadmap and a clear ROI model.
+            </p>
+            <ul>
+              <li>Use-case selection + ROI scoring</li>
+              <li>Tooling architecture + risk controls</li>
+              <li>30/60/90-day implementation plan</li>
+            </ul>
+          </article>
+
+          <article class="card service">
+            <h3>Custom AI Workflow Automation</h3>
+            <p>
+              We build AI into your existing workflows—reporting, coordination, document handling, and triage—so time
+              savings show up every week.
+            </p>
+            <ul>
+              <li>Automations with approvals + auditability</li>
+              <li>Integrations with your current stack</li>
+              <li>Prompt libraries + guardrails</li>
+            </ul>
+          </article>
+
+          <article class="card service">
+            <h3>Data Management Strategy</h3>
+            <p>
+              Get “AI-ready” without boiling the ocean. We focus on the minimum data foundation needed for reliable
+              reporting and dependable AI outputs.
+            </p>
+            <ul>
+              <li>Data inventory + ownership model</li>
+              <li>Quality fixes + governance basics</li>
+              <li>Standardized naming + access rules</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="cta-row" style="margin-top: 18px;">
+          <a class="btn btn-primary" href="#contact">Book a Free AI Audit</a>
+          <a class="btn" href="#results">See example outcomes</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <h2 class="section-title">A clear path from “where do we start?” to measurable ROI.</h2>
+        <p class="section-lede">
+          You’ll always know what’s happening, what success looks like, and what we’re measuring. No disruption. No AI
+          theater. We ship improvements your team can feel every week.
+        </p>
+
+        <div class="steps">
+          <article class="card step">
+            <div class="num">1</div>
+            <h3>AI Audit (1–2 weeks)</h3>
+            <p>We map your workflows and identify high-leverage AI opportunities with fast payback.</p>
+            <ul class="deliverables">
+              <li>Workflow map + bottlenecks</li>
+              <li>Shortlist of top use-cases</li>
+              <li>Initial ROI estimate</li>
+            </ul>
+          </article>
+
+          <article class="card step">
+            <div class="num">2</div>
+            <h3>Strategy (1 week)</h3>
+            <p>We pick the best first implementation and define success metrics and guardrails.</p>
+            <ul class="deliverables">
+              <li>30/60/90-day roadmap</li>
+              <li>Success metrics + governance</li>
+              <li>Tool selection + architecture</li>
+            </ul>
+          </article>
+
+          <article class="card step">
+            <div class="num">3</div>
+            <h3>Integration & Build (2–6 weeks)</h3>
+            <p>We implement AI workflows connected to your current tools—securely and responsibly.</p>
+            <ul class="deliverables">
+              <li>Production-ready automations</li>
+              <li>Documentation + monitoring</li>
+              <li>Handover plan</li>
+            </ul>
+          </article>
+
+          <article class="card step">
+            <div class="num">4</div>
+            <h3>Training & Adoption (ongoing)</h3>
+            <p>We enable your team to run it confidently—then iterate based on real usage.</p>
+            <ul class="deliverables">
+              <li>Enablement sessions</li>
+              <li>Playbooks + prompt library</li>
+              <li>Continuous improvement loop</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="container">
+        <h2 class="section-title">Proof over promises.</h2>
+        <p class="section-lede">
+          Three outcomes you can expect from real-world AI implementation work—focused on shipping, adoption, and results.
+        </p>
+
+        <ul class="results-bullets" aria-label="Implementation outcomes">
+          <li>
+            <strong>We map the workflow, then pick 1–2 high-leverage use-cases.</strong>
+            You get a clear scope, success metrics, and an ROI-first plan based on how your team actually works (docs, email, spreadsheets, approvals).
+          </li>
+          <li>
+            <strong>We ship integrations into your existing tools.</strong>
+            Production-ready automations (with guardrails) that reduce admin load and make reporting/coordination faster—without disrupting operations.
+          </li>
+          <li>
+            <strong>Adoption + measurable results are part of the deliverable.</strong>
+            Training, playbooks, and a handover plan so the workflow sticks—and outcomes show up in hours saved, cycle time reductions, and decision visibility.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="card lead">
+          <div>
+            <h2 class="section-title" style="margin-bottom: 8px;">Book a Free AI Audit</h2>
+            <p class="section-lede" style="margin-bottom: 0;">
+              Share your role and your biggest bottleneck. We’ll reply with 3 practical AI opportunities and a rough ROI
+              estimate.
+            </p>
+          </div>
+
+          <div>
+            <form id="leadForm">
+              <label>
+                Name
+                <input name="name" type="text" autocomplete="name" required />
+              </label>
+              <label>
+                Work email
+                <input name="email" type="email" autocomplete="email" required />
+              </label>
+              <label>
+                Role
+                <select name="role" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Founder / Owner</option>
+                  <option>PMO Director</option>
+                  <option>Project Manager</option>
+                  <option>Operations / Plant Leader</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label>
+                Biggest bottleneck
+                <select name="bottleneck" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Reporting & status updates</option>
+                  <option>Document / email overload</option>
+                  <option>Resource planning & capacity</option>
+                  <option>Quality / non-conformance workflow</option>
+                  <option>Procurement & supplier coordination</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label>
+                Optional context
+                <textarea name="notes" placeholder="What tools do you use today? What would ‘success’ look like in 30 days?"></textarea>
+              </label>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">Email me 3 opportunities</button>
+                <a class="btn" href="mailto:hello@jga4consultancy.com?subject=Free%20AI%20Audit%20-%20Request">Email instead</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>JGA4 Consultancy</h4>
+          <div style="display:flex; align-items:center; gap:10px; margin-top: 10px;">
+            <img src="logo.png" alt="" class="brand-mark" style="width:28px; height:28px; filter: grayscale(1) brightness(0.35);" />
+            <span style="color: var(--muted); font-weight: 650;">Practical AI implementation for manufacturing and PMO leaders.</span>
+          </div>
+          <p class="copyright">© <span id="year"></span> JGA4 Consultancy</p>
+        </div>
+
+        <div>
+          <h4>Quick links</h4>
+          <a href="#services">Services</a><br />
+          <a href="#process">Process</a><br />
+          <a href="#results">Results</a><br />
+          <a href="#contact">Book an audit</a>
+        </div>
+
+        <div>
+          <h4>Social</h4>
+          <a href="https://www.linkedin.com/in/jassimga4/" target="_blank" rel="noopener noreferrer">
+            <img class="social-icon" src="icons/linkedin.svg" alt="" />
+            LinkedIn
+          </a>
+          <a href="mailto:jgafoor56@gmail.com" aria-label="Email">
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+    (function () {
+      var form = document.getElementById("leadForm");
+      if (!form) return;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+
+        var name = (data.get("name") || "").toString().trim();
+        var email = (data.get("email") || "").toString().trim();
+        var role = (data.get("role") || "").toString().trim();
+        var bottleneck = (data.get("bottleneck") || "").toString().trim();
+        var notes = (data.get("notes") || "").toString().trim();
+
+        var subject = "Free AI Audit - Request";
+        var bodyLines = [
+          "Hi Jassim,",
+          "",
+          "I'd like the free AI audit. Here are my details:",
+          "",
+          "Name: " + name,
+          "Work email: " + email,
+          "Role: " + role,
+          "Biggest bottleneck: " + bottleneck,
+          "",
+          "Optional context:",
+          notes || "(none)",
+          "",
+          "Thanks,",
+          name || ""
+        ];
+
+        var mailto = "mailto:hello@jga4consultancy.com"
+          + "?subject=" + encodeURIComponent(subject)
+          + "&body=" + encodeURIComponent(bodyLines.join("\n"));
+
+        window.location.href = mailto;
+      });
+    })();
+  </script>
+</body>
+</html>
+

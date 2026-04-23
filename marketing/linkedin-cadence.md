@@ -1,10 +1,10 @@
 # LinkedIn posting cadence (biweekly)
 
-Goal: drive qualified recruiter/peer traffic back to `https://jassimgafoor.github.io/` via specific posts on your case studies and blog.
+Goal: drive qualified recruiter/peer traffic back to via specific posts on your case studies and blog.
 
 ## Cadence
 
-Publish 2 posts per month (every 2 weeks).
+Publish 2 posts per month (every 2 weeks).ß
 
 Use this rotation:
 
