@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Jassim Abdul Gafoor</title>
+  <meta name="description" content="Contact Jassim Abdul Gafoor — email, LinkedIn, GitHub." />
+  <link rel="canonical" href="https://jga4.com/contact.html" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer data-domain="jga4.com" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site">
+    <div class="container">
+      <a class="brand" href="index.html">Jassim Abdul Gafoor</a>
+      <a href="resume.html">Resume</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Contact</h1>
+    <p>
+      Recruiting, or want to talk manufacturing and automation? Email is the fastest way to reach me —
+      I reply within a day.
+    </p>
+
+    <h2>Reach me</h2>
+    <ul>
+      <li>Email: <a href="mailto:jgafoor56@gmail.com">jgafoor56@gmail.com</a> <a href="#" class="small" id="copyEmail">[copy]</a></li>
+      <li>Phone: <a href="tel:+97459914009">+974 5991 4009</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/jassimga4">linkedin.com/in/jassimga4</a></li>
+      <li>GitHub: <a href="https://github.com/jassimga4">github.com/jassimga4</a></li>
+      <li>Writing: <a href="https://jassimga4.substack.com/">jassimga4.substack.com</a></li>
+    </ul>
+
+    <p style="margin-top: 24px;">
+      <a class="btn" href="resume.html">View resume</a>
+      <a class="btn" href="Resume.pdf" download>Download resume PDF</a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year">2026</span> Jassim Abdul Gafoor</div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("copyEmail").addEventListener("click", function (e) {
+      e.preventDefault();
+      navigator.clipboard.writeText("jgafoor56@gmail.com").then(() => {
+        this.textContent = "[copied!]";
+        setTimeout(() => (this.textContent = "[copy]"), 1500);
+      });
+    });
+  </script>
+</body>
+</html>
